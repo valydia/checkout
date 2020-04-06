@@ -8,7 +8,9 @@ lazy val root = (project in file("."))
     scalaVersion := "2.13.1",
     version := "1.0",
     libraryDependencies += scalaTest % Test,
-    scalafmtOnCompile.in(ThisBuild) := true
-//    coverageMinimum := 90,
-//    coverageFailOnMinimum := true
+    scalafmtOnCompile.in(ThisBuild) := true,
+    coverageMinimum := 90,
+    coverageFailOnMinimum := true
   )
+
+addCommandAlias("full", "clean;compile;coverage;test;coverageReport")
